@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    /* Background styles */
+    .background-radial-gradient {
+      background-color: hsl(218, 41%, 15%);
+      background-image: radial-gradient(650px circle at 0% 0%, hsl(218, 41%, 35%) 15%, hsl(218, 41%, 30%) 35%,
+          hsl(218, 41%, 20%) 75%, hsl(218, 41%, 19%) 80%, transparent 100%),
+        radial-gradient(1250px circle at 100% 100%, hsl(218, 41%, 45%) 15%, hsl(218, 41%, 30%) 35%, hsl(218, 41%, 20%) 75%, hsl(218, 41%, 19%) 80%, transparent 100%);
+    }
+
+    #radius-shape-1,
+    #radius-shape-2 {
+      position: absolute;
+      background: radial-gradient(#44006b, #ad1fff);
+      overflow: hidden;
+    }
+
+    #radius-shape-1 {
+      height: 220px;
+      width: 220px;
+      top: -60px;
+      left: -130px;
+      border-radius: 50%;
+    }
+
+    #radius-shape-2 {
+      bottom: -60px;
+      right: -110px;
+      width: 300px;
+      height: 300px;
+      border-radius: 38% 62% 63% 37% / 70% 33% 67% 30%;
+    }
+
+    .bg-glass {
+      background-color: hsla(0, 0%, 100%, 0.9) !important;
+      backdrop-filter: saturate(200%) blur(25px);
+    }
+
+    /* Content styles */
+    .container {
+      margin-top: 4em;
+      max-width: 800px;
+      margin-left: auto;
+      margin-right: auto;
+      padding: 0 1em;
+    }
+
+    .header {
+      color: hsl(218, 81%, 95%);
+      font-size: 2em;
+      font-weight: bold;
+      line-height: 1.2;
+    }
+
+    .sub-header {
+      color: hsl(218, 81%, 75%);
+      font-size: 1.5em;
+      margin-bottom: 1em;
+    }
+
+    .paragraph {
+      color: hsl(218, 81%, 85%);
+      opacity: 0.7;
+      margin-bottom: 2em;
+    }
+
+    /* Form styles */
+    .card {
+      background-color: hsla(0, 0%, 100%, 0.9);
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .form-container {
+      padding: 2em;
+    }
+
+    .form-heading {
+      font-size: 1.5em;
+      margin-bottom: 1.5em;
+    }
+
+    .form-label {
+      display: block;
+      margin-bottom: 0.5em;
+    }
+
+    .form-input {
+      width: 100%;
+      padding: 0.5em;
+      margin-bottom: 1em;
+    }
+
+    .form-button {
+      width: 100%;
+      padding: 1em;
+      background-color: #007bff;
+      color: #fff;
+      border: none;
+      cursor: pointer;
+    }
+
+    .form-button:hover {
+      background-color: #0056b3;
+    }
+
+    .error-message {
+      color: #dc3545;
+      font-size: 1em;
+      margin-top: 1em;
+    }
+
+    /* Media Queries for Responsive Design */
+    @media screen and (max-width: 600px) {
+      .header {
+        font-size: 1.5em;
+      }
+
+      .sub-header {
+        font-size: 1.2em;
+      }
+
+      .paragraph {
+        font-size: 0.9em;
+      }
+
+      .form-heading {
+        font-size: 1.2em;
+      }
+
+      .form-input,
+      .form-button {
+        padding: 0.8em;
+      }
+
+      .error-message {
+        font-size: 0.8em;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="background-radial-gradient">
+    <div id="radius-shape-1"></div>
+    <div id="radius-shape-2"></div>
+  </div>
+
+  <div class="container">
+    <div class="header">Welcome to <span style="color: hsl(218, 81%, 75%)">Login Page</span></div>
+
+    <div class="card bg-glass">
+      <div class="form-container">
+        <form action="/login" method="POST">
+          <div class="form-heading">Login</div>
+
+          <!-- Error message (JavaScript controlled) -->
+          <div id="error-message" class="error-message" style="display: none;">Invalid email or password.</div>
+
+          <label class="form-label" for="email">Email address</label>
+          <input type="email" name="email" id="email" class="form-input" />
+
+          <label class="form-label" for="password">Password</label>
+          <input type="password" name="password" id="password" class="form-input" />
+
+          <button type="submit" class="form-button">Sign In</button>
+
+          <div class="text-center">
+            <p>Don't have an account yet? <a href="/register">Register</a></p>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // JavaScript to toggle the error message visibility
+    document.addEventListener('DOMContentLoaded', function () {
+      const errorMessage = document.getElementById('error-message');
+      // Simulating an error condition for demonstration purposes
+      const showError = true;
+
+      if (showError) {
+        errorMessage.style.display = 'block';
+      }
+    });
+  </script>
+
+</body>
+
+</html>

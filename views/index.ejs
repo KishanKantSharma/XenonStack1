@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en" class="h-100">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: Arial, sans-serif;
+    }
+
+    /* Additional styles for responsiveness */
+    @media (max-width: 768px) {
+      body {
+        background-size: cover;
+      }
+
+      .container {
+        max-width: 100%;
+      }
+
+      .mb-auto {
+        margin-bottom: 1rem;
+      }
+
+      .float-md-start,
+      .float-md-end {
+        float: none;
+        text-align: center;
+        margin-bottom: 1rem;
+      }
+
+      .btn {
+        display: block;
+        width: 100%;
+        margin-bottom: 0.5rem;
+      }
+    }
+  </style>
+</head>
+
+<body class="d-flex h-100 text-center text-white bg-white">
+  <div class="container d-flex w-100 h-100 p-3 mx-auto flex-column">
+    <header class="mb-auto">
+      <div>
+        <h3 class="float-md-start mb-0 text-dark">Gucci</h3>
+        <nav class="nav nav-masthead justify-content-center float-md-end">
+          <form action="/logout?_method=DELETE" method="POST">
+            <button class="nav-link fw-bold py-1 px-0 btn p-3 btn-dark text-white" type="submit">Logout</button>
+          </form>
+        </nav>
+      </div>
+    </header>
+
+    <main class="px-3">
+      <h1 class="text-dark">Welcome to Store</h1>
+      <p class="lead">
+        <a href="#" class="btn btn-lg fw-bold text-dark border-white bg-white">Learn more</a>
+      </p>
+    </main>
+
+    <footer class="mt-auto text-dark-50">
+      <p class="text-dark">Developed by @Kishankant</p>
+    </footer>
+  </div>
+
+  <script>
+    // Your JavaScript code can go here
+  </script>
+</body>
+
+</html>

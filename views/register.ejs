@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Register</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: Arial, sans-serif;
+      background-color: hsl(216, 74%, 69%);
+      color: hsl(350, 81%, 55%);
+    }
+
+    .container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      padding: 20px;
+    }
+
+    .header {
+      margin: 0 0 20px;
+      font-size: 2.0rem;
+      line-height: 1.2;
+      font-weight: 700;
+      color: hsl(220, 13%, 73%);
+    }
+
+    .card {
+      width: 700px;
+      background-color: hsla(0, 0%, 100%, 0.9);
+      backdrop-filter: saturate(200%) blur(25px);
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      border-radius: 8px;
+      overflow: hidden;
+    }
+
+    .form-outline {
+      position: relative;
+      margin-bottom: 1.5rem;
+    }
+
+    input {
+      width: 100%;
+      padding: 0.5rem;
+      font-size: 1rem;
+      border: none;
+      border-bottom: 1px solid hsl(218, 41%, 75%);
+      outline: none;
+      background-color: transparent;
+      color: hsl(218, 41%, 75%);
+    }
+
+    label {
+      position: absolute;
+      top: 0.5rem;
+      left: 0.5rem;
+      font-size: 1rem;
+      color: hsl(218, 41%, 75%);
+      pointer-events: none;
+      transition: 0.3s ease-out;
+    }
+
+    input:focus+label,
+    input:valid+label {
+      top: -1rem;
+      left: 0;
+      font-size: 0.8rem;
+      color: hsl(218, 81%, 95%);
+    }
+
+    .btn {
+      display: block;
+      width: 100%;
+      padding: 0.75rem;
+      background-color: hsl(218, 41%, 35%);
+      color: hsl(218, 81%, 95%);
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      transition: background-color 0.3s ease-out;
+    }
+
+    .btn:hover {
+      background-color: hsl(218, 41%, 45%);
+    }
+
+    .text-center {
+      text-align: center;
+    }
+
+    p {
+      margin: 0;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container mt-4">
+    <div class="header">Welcome to Registration Page</div>
+
+    <div class="card">
+      <div class="form-outline">
+        <form action="/register" method="POST">
+          <div class="form-outline mb-4">
+            <input type="text" name="name" id="form3Example2" class="form-control" required />
+            <label for="form3Example2">Full Name</label>
+          </div>
+
+          <div class="form-outline mb-4">
+            <input type="email" name="email" id="form3Example3" class="form-control" required />
+            <label for="form3Example3">Email address</label>
+          </div>
+
+          <div class="form-outline mb-4">
+            <input type="password" name="password" id="form3Example4" class="form-control" required />
+            <label for="form3Example4">Password</label>
+          </div>
+
+          <button type="submit" class="btn">Sign up</button>
+
+          <div class="text-center">
+            <p>Already have an account? <a href="/login">Login</a></p>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</body>
+
+</html>
